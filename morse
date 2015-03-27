@@ -1,0 +1,37 @@
+#!/usr/bin/env swift
+
+var count = countElements(Process.arguments)
+var args = Process.arguments[1..<count]
+
+var morseDict = ["A": ".-",
+                 "B": "-...",
+                 "C": "-.-.",
+                 "D": "-..",
+                 "E": ".",
+                 "F": "..-.",
+                 "G": "--.",
+                 "H": "....",
+                 "I": "..",
+                 "J": ".---",
+                 "K": "-.-",
+                 "L": ".-..",
+                 "M": "--",
+                 "N": "-.",
+                 "O": "---",
+                 "P": ".--.",
+                 "Q": "--.-",
+                 "R": ".-.",
+                 "S": "...",
+                 "T": "-",
+                 "U": "..-",
+                 "V": "...-",
+                 "W": ".--",
+                 "X": "-..-",
+                 "Y": "-.--",
+                 "Z": "--.-"]
+
+let sortedDict = sorted(morseDict) {$0.0 < $1.0}
+
+for (letter, code) in sortedDict {
+  println("\(letter) \(code)")
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env swift
+
+var count = countElements(Process.arguments)
+var args = Process.arguments[1..<count]
+var name: String? = join(" ", args)
+
+println("Hi \(name!)!")
