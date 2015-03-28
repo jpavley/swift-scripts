@@ -6,7 +6,7 @@ let count = Process.arguments.count
 //println(count)
 
 let  args = Process.arguments[1..<count]
-println(args)
+//println(args)
 
 var morseDict: [Character: String] = ["A": ".-",
                  "B": "-...",
