@@ -8,7 +8,7 @@ Mac OS X shell scripts written in Swift. Because why not?
 
 Usage: ./hello [Your Name]
 
-Explation 
+Explanation 
 * Kinda of boring, replies with "Hi [Your Name]!"
 * Basically a hello world swift script
 
