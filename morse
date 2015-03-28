@@ -1,9 +1,9 @@
 #!/usr/bin/env swift
 
-var count = countElements(Process.arguments)
+let count = Process.arguments.count
 //println(count)
 
-var args = Process.arguments[1..<count]
+let  args = Process.arguments[1..<count]
 //println(args)
 
 var morseDict = ["A": ".-",
@@ -35,27 +35,10 @@ var morseDict = ["A": ".-",
 
 // if there are no args them output the morse dictionary
 
-if count <= 1 {
+if args.isEmpty {
   let sortedDict = sorted(morseDict) {$0.0 < $1.0}
   for (letter, code) in sortedDict {
     println("\(letter) \(code)")
   }
 }
-
-// if there are args see if I can translate them
-
-let keys = args.keys
-let values = args.values
-
-for argument in args {
-  if argument in keys {
-    print(args[argument]
-  }
-  if argument in values {
-    print(args.keyForValue(argument)
-  }
-}
-
-println("")
-
 
