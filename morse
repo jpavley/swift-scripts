@@ -1,5 +1,16 @@
 #!/usr/bin/env swift
 
+// morse swift script
+
+// The MIT License (MIT)
+// Copyright (c) 2015 John Pavley
+
+// TODO:
+// - Add support for morse to english transcoding
+// - Add more morse code (numbers, punctuation, prosigns, extentions)
+// - Add switch for help, version, verbose
+// - Add sounds and voice!
+
 import Foundation
 
 let count = Process.arguments.count
@@ -9,31 +20,31 @@ let  args = Process.arguments[1..<count]
 //println(args)
 
 var morseDict: [Character: String] = ["A": ".-",
-                 "B": "-...",
-                 "C": "-.-.",
-                 "D": "-..",
-                 "E": ".",
-                 "F": "..-.",
-                 "G": "--.",
-                 "H": "....",
-                 "I": "..",
-                 "J": ".---",
-                 "K": "-.-",
-                 "L": ".-..",
-                 "M": "--",
-                 "N": "-.",
-                 "O": "---",
-                 "P": ".--.",
-                 "Q": "--.-",
-                 "R": ".-.",
-                 "S": "...",
-                 "T": "-",
-                 "U": "..-",
-                 "V": "...-",
-                 "W": ".--",
-                 "X": "-..-",
-                 "Y": "-.--",
-                 "Z": "--.-"]
+                                      "B": "-...",
+                                      "C": "-.-.",
+                                      "D": "-..",
+                                      "E": ".",
+                                      "F": "..-.",
+                                      "G": "--.",
+                                      "H": "....",
+                                      "I": "..",
+                                      "J": ".---",
+                                      "K": "-.-",
+                                      "L": ".-..",
+                                      "M": "--",
+                                      "N": "-.",
+                                      "O": "---",
+                                      "P": ".--.",
+                                      "Q": "--.-",
+                                      "R": ".-.",
+                                      "S": "...",
+                                      "T": "-",
+                                      "U": "..-",
+                                      "V": "...-",
+                                      "W": ".--",
+                                      "X": "-..-",
+                                      "Y": "-.--",
+                                      "Z": "--.-"]
 
 if args.isEmpty {
   // if there are no args them output the morse dictionary
