@@ -22,5 +22,5 @@ Explanation
 * If you enter the command with input (usage 2) your input is translated into morse code! (Awesome!)
 
 Example
-* Input: ./morse rocks
+* Input: ./morse morse code rocks
 * Output: -- --- .-. ... . /-.-. --- -.. . /.-. --- -.-. -.- ... /
