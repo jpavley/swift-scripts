@@ -1,12 +1,14 @@
 #!/usr/bin/env swift
 
+import Foundation
+
 let count = Process.arguments.count
 //println(count)
 
 let  args = Process.arguments[1..<count]
-//println(args)
+println(args)
 
-var morseDict = ["A": ".-",
+var morseDict: [Character: String] = ["A": ".-",
                  "B": "-...",
                  "C": "-.-.",
                  "D": "-..",
@@ -33,12 +35,24 @@ var morseDict = ["A": ".-",
                  "Y": "-.--",
                  "Z": "--.-"]
 
-// if there are no args them output the morse dictionary
-
 if args.isEmpty {
+  // if there are no args them output the morse dictionary
   let sortedDict = sorted(morseDict) {$0.0 < $1.0}
   for (letter, code) in sortedDict {
     println("\(letter) \(code)")
   }
+} else {
+  // try to translate english letters into morse code
+  for argument in args {
+    //print(argument)
+    let normArgument = argument.uppercaseString
+    for character in normArgument {
+      if let letter = morseDict[character] {
+        print(letter)
+        print(" ") // space between morse letters
+      }
+    }
+    print("/") // slash between morse words
+  }
+  print("\n")
 }
-
