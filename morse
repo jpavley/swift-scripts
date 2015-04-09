@@ -1,23 +1,39 @@
 #!/usr/bin/env swift
 
+// ---
 // morse swift script
+// ---
 
+// morse swift script
 // The MIT License (MIT)
 // Copyright (c) 2015 John Pavley
 
+
+// ---
 // TODO:
+// ---
+
+
 // - Add support for morse to english transcoding
-// - Add more morse code (numbers, punctuation, prosigns, extentions)
+// - Add more morse code (punctuation, prosigns, extentions)
 // - Add switch for help, version, verbose
 // - Add sounds and voice!
 
 import Foundation
+
+// ---
+// shared constants
+// ---
 
 let count = Process.arguments.count
 //println(count)
 
 let  args = Process.arguments[1..<count]
 //println(args)
+
+// ---
+// shared vars
+// ---
 
 var morseDict: [Character: String] = ["A": ".-",
                                       "B": "-...",
@@ -56,16 +72,29 @@ var morseDict: [Character: String] = ["A": ".-",
                                       "9": "----.",
                                       "0": "-----"]
 
-if args.isEmpty {
-  // if there are no args them output the morse dictionary
-  let sortedDict = sorted(morseDict) {$0.0 < $1.0}
-  for (letter, code) in sortedDict {
-    println("\(letter) \(code)")
+// ---
+// shared functions
+// ---
+
+func main() {
+  if args.isEmpty {
+    // if there are no args them output the morse dictionary
+    let sortedDict = sorted(morseDict) {$0.0 < $1.0}
+    for (letter, code) in sortedDict {
+      println("\(letter) \(code)")
+    }
+  } else {
+    // test: is it more or is it english
+    // if morse: transcode into english
+    // if english: transcode into morse
+
+    // try to translate english letters into morse code
+    transToMorse()
   }
-} else {
-  // try to translate english letters into morse code
+}
+
+func transToMorse() {
   for argument in args {
-    //print(argument)
     let normArgument = argument.uppercaseString
     for character in normArgument {
       if let letter = morseDict[character] {
@@ -77,3 +106,10 @@ if args.isEmpty {
   }
   print("\n")
 }
+
+// ---
+// main program
+// ---
+
+main()
+
