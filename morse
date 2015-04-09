@@ -102,7 +102,9 @@ func createEnglishDict() {
 }
 
 func transToMorse() {
-  for argument in args {
+  for (index, argument) in enumerate(args) {
+    // println("argument \(index): \(argument)")
+    
     let normArgument = argument.uppercaseString
     for character in normArgument {
       if let mcode = morseDict[character] {
@@ -110,7 +112,9 @@ func transToMorse() {
         print(" ") // space between morse letters
       }
     }
-    print("/") // slash between morse words
+    if index + 1 < args.count {
+      print("/ ") // slash between morse words
+    }
   }
   print("\n")
 }
