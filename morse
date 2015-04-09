@@ -72,6 +72,8 @@ var morseDict: [Character: String] = ["A": ".-",
                                       "9": "----.",
                                       "0": "-----"]
 
+var englishDict = [String: Character]()
+
 // ---
 // shared functions
 // ---
@@ -93,18 +95,35 @@ func main() {
   }
 }
 
+func createEnglishDict() {
+//  for (k, v) in morseDict {
+//    englishDict[v] = k
+//  }
+}
+
 func transToMorse() {
   for argument in args {
     let normArgument = argument.uppercaseString
     for character in normArgument {
-      if let letter = morseDict[character] {
-        print(letter)
+      if let mcode = morseDict[character] {
+        print(mcode)
         print(" ") // space between morse letters
       }
     }
     print("/") // slash between morse words
   }
   print("\n")
+}
+
+func transToEnglish() {
+  for argument in args {
+    //for mcode in argument {
+    //  if let letter = englishDict[mcode] {
+    //    print(letter)
+    //  }
+    //}
+    print(" ") // space between english words
+  }
 }
 
 // ---
