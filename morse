@@ -79,6 +79,7 @@ var englishDict = [String: Character]()
 // ---
 
 func main() {
+  createEnglishDict()
   if args.isEmpty {
     // if there are no args them output the morse dictionary
     let sortedDict = sorted(morseDict) {$0.0 < $1.0}
@@ -96,9 +97,9 @@ func main() {
 }
 
 func createEnglishDict() {
-//  for (k, v) in morseDict {
-//    englishDict[v] = k
-//  }
+  for (k, v) in morseDict {
+    englishDict[v] = k
+  }
 }
 
 func transToMorse() {
