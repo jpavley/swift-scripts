@@ -13,7 +13,6 @@
 // ---
 
 
-// - Add support for morse to english transcoding
 // - Add switch for help, version, verbose
 // - Add sounds and voice!
 
@@ -154,14 +153,16 @@ func transToMorse() {
 }
 
 func transToEnglish() {
-  for argument in args {
-    //for mcode in argument {
-    //  if let letter = englishDict[mcode] {
-    //    print(letter)
-    //  }
-    //}
-    print(" ") // space between english words
+  
+  for (index, argument) in enumerate(args) {
+    
+    if let letter = englishDict[argument] {
+      print(letter)
+    } else {
+      print(" ") // space between english words
+    }
   }
+  print("\n")
 }
 
 // ---
