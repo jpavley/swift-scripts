@@ -5,7 +5,7 @@ Mac OS X shell scripts written in Swift. Because why not?
 ## Requirements
 
 * Xcode 6.3
-* Swfit 1.2
+* Swift 1.2
 * Ability to use basic UNIX command line programs
 
 ## Contents
