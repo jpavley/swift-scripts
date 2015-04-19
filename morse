@@ -18,6 +18,9 @@
 
 import Foundation
 
+// print a "bell" character
+// println("\u{07}")
+
 // ---
 // shared constants
 // ---
