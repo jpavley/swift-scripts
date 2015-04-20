@@ -17,13 +17,28 @@
 // - Add sounds and voice!
 
 import Foundation
+import AppKit
 
 // print a "bell" character
 // println("\u{07}")
 
+// local classes
+
+@objc class SynthDelegate : NSObject, NSSpeechSynthesizerDelegate {
+    
+  func run(speechString: String) {
+    var synth = NSSpeechSynthesizer.init()
+    synth.delegate = self
+    synth.startSpeakingString(speechString)
+  }
+}
+
 // ---
 // shared constants
 // ---
+
+let speak = true
+var translation = String()
 
 let count = Process.arguments.count
 //println(count)
@@ -80,6 +95,9 @@ var morseDict: [Character: String] = ["A": ".-",
                                       "0": "-----"]
 
 var englishDict = [String: Character]()
+
+var spokenDict: [String: String] = [".": "dit",
+                                    "-": "doh"]
 
 // ---
 // shared functions
@@ -145,14 +163,22 @@ func transToMorse() {
     for character in normArgument {
       if let mcode = morseDict[character] {
         print(mcode)
+        translation += mcode
         print(" ") // space between morse letters
+        translation += " "
       }
     }
     if index + 1 < args.count {
       print("/ ") // slash between morse words
-    }
+      translation += " "
+   }
   }
   print("\n")
+  if speak {
+    println(translation)
+    SynthDelegate().run(translation)
+    sleep(2)
+  }
 }
 
 func transToEnglish() {
